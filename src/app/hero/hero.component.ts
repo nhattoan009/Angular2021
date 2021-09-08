@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit {
-
+  public name = 'Toan';
+  
   constructor() { }
 
   ngOnInit(): void {
