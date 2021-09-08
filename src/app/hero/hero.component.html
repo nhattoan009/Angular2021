@@ -1,5 +1,11 @@
 <div class="text">
     <p>Hello component hero!</p>
+
+    <input value="{{name}}" title="day la {{name}}">
+    <input [value]="name" [title]="'day la '+ name">
     <h3>Hello {{name}}</h3>
-    <p>how are you?</p>
+    <p>how old are you??</p>
+    <input [value]="age">
+    <h4 *ngIf="age > 30">ban gia roi</h4>
+    <h4 *ngIf="age < 30">ban con tre</h4>
 </div>
