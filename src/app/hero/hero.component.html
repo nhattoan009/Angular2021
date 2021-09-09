@@ -1,41 +1,14 @@
 <div class="text">
-    <p>Hello component hero!</p>
 
-    <input value="{{name}}" title="day la {{name}}">
-    <input [(ngModel)]="age" [title]="'day la '+ age">
-    <h3>Hello {{name}}</h3>
-    <p>i'm {{age}}</p>
-    <h4 *ngIf="age > 20">ban gia roi</h4>
-    <h4 *ngIf="age <= 20">ban con tre</h4>
+    <br>
 
+    <label>Tinh Thanh</label>
+    <select (change) = "changeCity($event)">
+      <option *ngFor="let item of tinh" value="{{item.tinh}}">{{item.tinh}}</option>
+    </select>
 
-    <div *ngIf="age > 20; then gia; else tre">
-    </div>
-    <ng-template #tre>
-        ban con tre
-    </ng-template>
-    <ng-template #gia>
-        ban da gia
-    </ng-template>
-
-    <div *ngFor="let item of traiCay; let i = index">{{i+1}} - {{item}}</div>
-
-    <table border="1" style="width: 200px;">
-        <tr>
-            <th>stt</th>
-            <th>name</th>
-            <th>price</th>
-            <th>discount</th>
-        </tr>
-        <tr *ngFor="let item of traiCay; let i = index">
-            <th>{{i+1}}</th>
-            <th>{{item.name | uppercase}}</th>
-            <th [ngClass]="{giaAm: item.price == 0}" style="text-align: right;">
-                {{item.price | currency: "USD":"symbol":"1.1"}}
-            </th>
-            <th>
-                {{item.discount | onsale | uppercase}}
-            </th>
-        </tr>
-    </table>
+    <label >Thanh Pho</label>
+    <select>
+        <option *ngFor="let item of tp" value="{{item}}">{{item}}</option>
+    </select>
 </div>
