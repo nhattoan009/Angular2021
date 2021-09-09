@@ -2,10 +2,20 @@
     <p>Hello component hero!</p>
 
     <input value="{{name}}" title="day la {{name}}">
-    <input [value]="name" [title]="'day la '+ name">
+    <input [(ngModel)]="age" [title]="'day la '+ age">
     <h3>Hello {{name}}</h3>
-    <p>how old are you??</p>
-    <input [value]="age">
-    <h4 *ngIf="age > 30">ban gia roi</h4>
-    <h4 *ngIf="age < 30">ban con tre</h4>
+    <p>i'm {{age}}</p>
+    <h4 *ngIf="age > 20">ban gia roi</h4>
+    <h4 *ngIf="age <= 20">ban con tre</h4>
+
+
+    <div *ngIf="age > 20; then gia; else tre">
+    </div>
+    <ng-template #tre>
+        ban con tre
+    </ng-template>
+    <ng-template #gia>
+        ban da gia
+    </ng-template>
+
 </div>
