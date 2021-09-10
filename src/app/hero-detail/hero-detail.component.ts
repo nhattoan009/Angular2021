@@ -1,4 +1,5 @@
 import { Component, NgModule, OnInit } from '@angular/core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -9,10 +10,15 @@ import { Component, NgModule, OnInit } from '@angular/core';
 
 export class HeroDetailComponent implements OnInit {
   public loginName = 'admin';
+  public counter = 0;
+  public binhPhuong = 0;
 
-  constructor() { }
+  constructor(private common: CommonService) { }
 
   ngOnInit(): void {
+    this.counter = this.common.counter;
+    this.binhPhuong = this.common.binhPhuong(this.counter);
+    this.common.counter++;
   }
 
 }

@@ -1,7 +1,5 @@
 <div class="text" [appHightLight]="'blue'">
-
     <br>
-
     <label>Tinh Thanh</label>
     <select (change) = "changeCity($event)">
       <option *ngFor="let item of tinh" value="{{item.tinh}}">{{item.tinh}}</option>
