@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero-detail.component.scss']
 })
 export class HeroDetailComponent implements OnInit {
-
+  public loginName = "admin";
+  
   constructor() { }
 
   ngOnInit(): void {

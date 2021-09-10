@@ -1,6 +1,10 @@
-<h2>Hello world</h2>
-<h3>Hello Angular</h3>
-<h3>My name is Toan</h3>
-
-<h1>{{title}}</h1>
-<app-hero></app-hero>
+<h1>Angular Router</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/hero" routerLinkActive="active">Hero Component</a></li>
+    <li><a routerLink="/hero-detail" routerLinkActive="active">hero-detail Component</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
