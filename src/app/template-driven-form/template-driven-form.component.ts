@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-template-driven-form',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenFormComponent implements OnInit {
   public name = '';
-  constructor() { }
+  constructor(private common: CommonService) { }
 
   ngOnInit(): void {
   }
 
   public submitName(): void{
-    console.log("submit form: "+ this.name);
+    this.common.submitData({name: this.name, age: 12});
   }
 }
