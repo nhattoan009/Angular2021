@@ -13,12 +13,16 @@ export class GETdataComponent implements OnInit {
   ) { }
 
   public ngOnInit(): void {
-    this.httpService.getComments().subscribe(data => {
-      console.log("getComments ", data);
+    const payload = {
+      body: "some connent",
+      postId: 3
+    };
+    this.httpService.postComments(payload).subscribe(data => {
+      console.log("postComments ", data);
     })
 
-    this.httpService.getRandomUser(3).subscribe(data => {
-      console.log("dagetRandomUserta ", data.results);
-    })
+    // this.httpService.getRandomUser(3).subscribe(data => {
+    //   console.log("dagetRandomUserta ", data.results);
+    // })
   }
 }
